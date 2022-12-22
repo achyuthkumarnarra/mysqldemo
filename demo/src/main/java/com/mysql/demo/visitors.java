@@ -1,49 +1,24 @@
 package com.mysql.demo;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 
 import jakarta.persistence.*;
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table
 public class visitors {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
-    @Column(nullable = false,name="vname")
+    @Column (name="name")
     private String name;
-    @Id @Column
+    @Id @Column (name="phonenumber")
     private String phonenumber;
 
-    public visitors(){
-
-    }
-
-    public visitors(int id, String name, String phonenumber) {
-        this.id = id;
-        this.name = name;
-        this.phonenumber = phonenumber;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPhonenumber() {
-        return phonenumber;
-    }
-
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
-    }
 }
