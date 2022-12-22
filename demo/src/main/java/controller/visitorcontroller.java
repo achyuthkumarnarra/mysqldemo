@@ -25,10 +25,6 @@ public class visitorcontroller {
     public visitors createvisitor(@RequestBody visitors visitor) {
         return visitorsrepository.save(visitor);
     }
-    @GetMapping("/test")
-    public String test(){
-        return "connection ok";
-    }
     @GetMapping("{id}")
     public ResponseEntity<visitors> getEmployeeById(@PathVariable  long id){
         visitors visitor = visitorsrepository.findById(id)
