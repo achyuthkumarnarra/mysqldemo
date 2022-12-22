@@ -1,16 +1,16 @@
 package com.mysql.demo;
 
+
 import jakarta.persistence.*;
 
 @Entity
 @Table
 public class visitors {
-    @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
-    @Column(name="vname")
+    @Column(nullable = false,name="vname")
     private String name;
-    @Column
+    @Id @Column
     private String phonenumber;
 
     public visitors(){
